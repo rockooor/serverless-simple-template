@@ -1,6 +1,6 @@
 # Simple Serverless Template
 
-Built by [@Rockooor](https://twitter.com/Rockooor)
+Built by [@Rockooor](https://twitter.com/Rockooor), see also [this post on X](https://twitter.com/Rockooor/status/1691780012997792210)
 
 This is a bare bones serverless template to instantly get up and running building a serverless backend. Contains the following features:
 
