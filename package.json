@@ -1,0 +1,29 @@
+{
+  "name": "x",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.114",
+    "aws-lambda": "^1.0.7",
+    "serverless": "^3.30.1",
+    "serverless-webpack": "^5.11.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.80.0",
+    "serverless-api-cloudfront": "https://github.com/appsconcept/serverless-api-cloudfront"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1365.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-rockooor:rockooor/serverless-simple-template.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

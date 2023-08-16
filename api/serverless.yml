@@ -1,0 +1,47 @@
+service: some-service
+frameworkVersion: '2 || 3'
+
+plugins:
+  - serverless-webpack
+  - serverless-api-cloudfront
+
+package:
+  patterns:
+    - '!**/*.tar.gz'
+  individually: true
+
+custom:
+  # TODO: Add your secret name here
+  # secrets: ${ssm:/aws/reference/secretsmanager/your-secret-name}
+  corsAllowedOrigin:
+    # Automatically have Cors support for the right domain
+    # If you want any domain to access your backend, add *
+    # Please know what you're doing before putting * there.
+    dev: https://localhost:9000 # TODO: Your local dev url
+    staging: https://localhost:9000 # TODO: Your staging url
+    production: https://localhost:9000 # TODO: Your production url
+
+provider:
+  name: aws
+  region: eu-west-1
+  profile: rock # TODO: add your AWS profile name here
+  stage: dev
+  lambdaHashingVersion: '20201221'
+  environment:
+    # TODO: this is how you add secrets to your code
+    # In AWS Secrets Manager, the key should be {staging}-{name}
+    # eg for a secret named SECRET and the stage is production:
+    # production-SECRET
+    # SECRET_VAR: ${self:custom.secrets.${opt:stage, 'dev'}-SECRET_VAR}
+
+functions:
+  someFunction:
+    handler: someService/someHandler.handler
+    runtime: nodejs18.x
+    memorySize: 1024
+    timeout: 29
+    events:
+      - http:
+          cors: true
+          path: /someFunction
+          method: post
