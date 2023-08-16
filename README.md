@@ -20,6 +20,7 @@ aws_secret_access_key=SECRET_KEY
 
 Next:
 
+0. Make sure you have serverless installed `npm install serverless -g`
 1. Clone repo
 2. Install dependencies `npm install`
 3. Resolve all TODO in `serverless.yml`
